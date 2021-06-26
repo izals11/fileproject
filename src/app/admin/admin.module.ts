@@ -6,6 +6,7 @@ import { ProductComponent } from './product/product.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialDesign } from '../material/material';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
   declarations: [
     AdminComponent,
     DashboardComponent,
-    ProductComponent
+    ProductComponent,
+    ProductDetailComponent
   ],
   entryComponents:[
 
