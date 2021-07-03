@@ -20,5 +20,19 @@ export class AdminComponent implements OnInit {
       icon:'dashboard',
       url:'/admin/dashboard'
     },
+    {
+      name:'Product',
+      icon:'table_view',
+      url:'/admin/product'
+    },
   ];
+
+  logout()
+  {
+    let conf=confirm('keluar aplikasi?');
+    if(conf)
+    {
+      window.location.reload();
+    }
+  }
 }

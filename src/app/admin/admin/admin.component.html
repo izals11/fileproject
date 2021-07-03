@@ -1,59 +1,58 @@
 <ng-container>
-    <!--toolbar-->
-    <mat-toolbar color="primary" class="example-header">
-        <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <span>ODheFood</span>
-        <div class="uk-width-expand"></div>
-        <mat-menu #appMenu="matMenu">
-          <button mat-menu-item routerLink="/login">Logout</button>
-        </mat-menu>
-        <mat-icon>account_circle</mat-icon>
-        <button mat-button [matMenuTriggerFor]="appMenu">Admin</button>
-    </mat-toolbar>
-    <!--end toolbar-->
- 
-    <mat-sidenav-container class="example-container">
-    
-      <mat-sidenav #sidenav mode="side" [position]="'start'" opened class="sidenav-left"
-      [fixedInViewport]="true" [fixedTopGap]="60"
-      [fixedBottomGap]="0">
-    
-      <mat-nav-list>
-        <mat-list-item routerLink="/admin/dashboard">
-            <mat-icon matListIcon>dashboard</mat-icon>
-            <h3 matLine>Dashboard</h3>
-        </mat-list-item>
-      </mat-nav-list>
-      <mat-nav-list>
-        <mat-list-item routerLink="/admin/product">
-            <mat-icon matListIcon>table_view</mat-icon>
-            <h3 matLine>Product</h3>
-        </mat-list-item>
-      </mat-nav-list> 
-
-      </mat-sidenav>
-    
-    <mat-sidenav #sidenav mode="side" [position]="'end'"  class="example-container"
-    [fixedInViewport]="true" [fixedTopGap]="60" 
+  <!--toolbar-->
+  <mat-toolbar color="primary" class="example-header">
+  <button mat-icon-button (click)="sidenav.toggle()">
+  <mat-icon>menu</mat-icon>
+  </button>
+  <span>ODheFood</span>
+  <div class="uk-width-expand"></div>
+  <small>Admin</small>
+  </mat-toolbar>
+  <!--end toolbar-->
+  
+  <mat-sidenav-container class="example-container">
+  
+    <mat-sidenav #sidenav mode="side" [position]="'start'" opened class="sidenav-left"
+    [fixedInViewport]="true" [fixedTopGap]="60"
     [fixedBottomGap]="0">
-    
-       
-    
+  
+    <mat-nav-list>
+      <h4 matSubheader>Pages</h4>
+      <mat-list-item routerLink="/admin/dashboard">
+          <mat-icon matListIcon>dashboard</mat-icon>
+          <h3 matLine>Dashboard</h3>
+      </mat-list-item>
+      <mat-list-item routerLink="/admin/product">
+          <mat-icon matListIcon>table_view</mat-icon>
+          <h3 matLine>Product</h3>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <mat-list-item (click)="logout()">
+          <mat-icon matListIcon>logout</mat-icon>
+          <h3 matLine>Logout</h3>
+      </mat-list-item>
+    </mat-nav-list>
     </mat-sidenav>
-    <!--sidenav content-->
-    <mat-sidenav-content style="padding: 20px; background-color: #ccc;">
-    <!--halaman-halaman tampil disini-->
-    
-   
+  
+  <mat-sidenav #sidenav mode="side" [position]="'end'"  class="example-sidenav"
+  [fixedInViewport]="true" [fixedTopGap]="60"
+  [fixedBottomGap]="0">
+  
+     
+  
+  </mat-sidenav>
+  <!--sidenav content-->
+  <mat-sidenav-content style="padding: 20px; background-color: #ccc;">
+  <!--halaman-halaman tampil disini-->
+  
+ 
 <router-outlet></router-outlet>
-    
-    
-    
-    </mat-sidenav-content>
-    <!--end sidenav content-->
-    </mat-sidenav-container>   
-    </ng-container>
-
-    
+  
+  
+  
+  </mat-sidenav-content>
+  <!--end sidenav content-->
+  </mat-sidenav-container>   
+  </ng-container>

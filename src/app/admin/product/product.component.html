@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Product</mat-card-title>
+        <mat-card-title>{{title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div class="uk-flex">
@@ -16,6 +16,19 @@
                 <th></th>
                 <th align="right"></th>
             </thead>
+            <tbody>
+                <tr *ngFor="let menu of produk; let idx=index">
+                    <td>{{idx+1}}</td>
+                    <td>{{menu.kategori}}</td>
+                    <td>{{menu.nama}}</td>
+                    <td>{{menu.harga}}</td>
+                    <td></td>
+                    <td align="right">
+                        <button mat-button color="primary"  (click)="productDetail(menu, idx)">Edit</button>
+                        <button mat-button color="warn" (click)="deleteProduct(menu.id, idx)"[disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Deleting..':'Delete'}}</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </mat-card-content>
 </mat-card>
