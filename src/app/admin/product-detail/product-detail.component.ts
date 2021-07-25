@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
     this.loading=true; 
     if(this.data.id == undefined)
     {
-      //simpan ke fiirebase
+      //simpan ke firebase
       let doc = new Date().getTime().toString();
       this.data.uid = this.userData.uid;
       this.db.collection('produk').doc(doc).set(this.data).then(res=>{

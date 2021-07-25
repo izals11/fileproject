@@ -6,7 +6,11 @@
   </button>
   <span>ODheFood</span>
   <div class="uk-width-expand"></div>
-  <small>Admin</small>
+  <mat-icon>account_circle</mat-icon>
+  <button mat-button [matMenuTriggerFor]="appmenu">Admin</button>
+        <mat-menu #appmenu="matMenu">
+          <button mat-menu-item (click)='logout()'><mat-icon>logout</mat-icon>Logout</button>
+        </mat-menu>
   </mat-toolbar>
   <!--end toolbar-->
   
@@ -25,13 +29,6 @@
       <mat-list-item routerLink="/admin/product">
           <mat-icon matListIcon>table_view</mat-icon>
           <h3 matLine>Product</h3>
-      </mat-list-item>
-    </mat-nav-list>
-    <mat-divider></mat-divider>
-    <mat-nav-list>
-      <mat-list-item (click)="logout()">
-          <mat-icon matListIcon>logout</mat-icon>
-          <h3 matLine>Logout</h3>
       </mat-list-item>
     </mat-nav-list>
     </mat-sidenav>

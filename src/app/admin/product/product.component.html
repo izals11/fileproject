@@ -13,7 +13,6 @@
                 <th>KATEGORI</th>
                 <th>NAMA</th>
                 <th>HARGA</th>
-                <th></th>
                 <th align="right"></th>
             </thead>
             <tbody>
@@ -22,7 +21,6 @@
                     <td>{{menu.kategori}}</td>
                     <td>{{menu.nama}}</td>
                     <td>{{menu.harga}}</td>
-                    <td></td>
                     <td align="right">
                         <button mat-button color="primary"  (click)="productDetail(menu, idx)">Edit</button>
                         <button mat-button color="warn" (click)="deleteProduct(menu.id, idx)"[disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Deleting..':'Delete'}}</button>

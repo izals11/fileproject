@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
 
   constructor(
-    public router: Router
+    public router: Router,
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,8 @@ export class AdminComponent implements OnInit {
     let conf=confirm('keluar aplikasi?');
     if(conf)
     {
-      window.location.reload();
+    this.auth.signOut();
+    this.router.navigate(['/login']);
     }
   }
 }

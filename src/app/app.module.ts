@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
